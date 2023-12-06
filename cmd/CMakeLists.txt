@@ -79,4 +79,10 @@ if(NOT SILKWORM_CORE_ONLY)
   add_executable(sentry "${SENTRY_CMD_SRC}")
   target_link_libraries(sentry PRIVATE silkworm_sentry cmd_common)
 
+  # [=] standalone devp2p component
+  set(DEVP2P_CMD_SRC devp2p.cpp common/devp2p_options.cpp common/devp2p_options.hpp
+          devp2p.cpp)
+  add_executable(devp2p "${DEVP2P_CMD_SRC}")
+  target_link_libraries(devp2p PRIVATE silkworm_sentry cmd_common)
+
 endif()
